@@ -5,17 +5,23 @@
  */
 package seia;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
+
 /**
  *
  * @author Gama
  */
 public class Seia {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        subidArchivo file = new subidArchivo();
+        file.btnAbrirarchivoActionPerformed();
+        
+        
+        
     }
     
 }
