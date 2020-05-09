@@ -5,9 +5,6 @@
  */
 package seia;
 
-import java.awt.Desktop;
-import java.io.File;
-import java.io.IOException;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -30,8 +27,6 @@ public class Seia extends Application {
 
     
     public static void main(String[] args) {
-        subidArchivo file = new subidArchivo();
-        file.btnAbrirarchivoActionPerformed();
         launch(args);
     }
     

@@ -7,7 +7,11 @@ package seia;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 
 /**
  * FXML Controller class
@@ -16,9 +20,29 @@ import javafx.fxml.Initializable;
  */
 public class BackgroundController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private Button addFileButton;
+    
+    @FXML
+    private void enter(MouseEvent event){
+        addFileButton.setStyle("-fx-background-color: #CCCCCC;");
+    }
+    
+    @FXML
+    private void release(MouseEvent event){
+        addFileButton.setStyle("-fx-background-color: #CCCCCC;");
+    }
+    
+    @FXML
+    private void exit(MouseEvent event){
+        addFileButton.setStyle("-fx-background-color: #FFFFFF;");
+    }
+    
+    @FXML
+    private void press(MouseEvent event){
+        addFileButton.setStyle("-fx-background-color: #BBBBBB;");
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
