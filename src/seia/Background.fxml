@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #252525;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seia.BackgroundController">
    <children>
-      <Button fx:id="addFileButton" layoutX="300.0" layoutY="40.0" mnemonicParsing="false" onMouseEntered="#enter" onMouseExited="#exit" onMousePressed="#press" onMouseReleased="#release" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" text="            ELEGIR ARCHIVO" textAlignment="CENTER">
+      <Button fx:id="addFileButton" layoutX="300.0" layoutY="40.0" mnemonicParsing="false" onAction="#addFileButtonAction" onMouseEntered="#enter" onMouseExited="#exit" onMousePressed="#press" onMouseReleased="#release" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" text="            ELEGIR ARCHIVO" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

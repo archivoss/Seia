@@ -11,7 +11,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
+import javax.swing.*;
+import java.io.File;
+import java.io.IOException;
+import javafx.event.ActionEvent;
 
 /**
  * FXML Controller class
@@ -19,9 +22,19 @@ import javafx.scene.paint.Color;
  * @author Gama
  */
 public class BackgroundController implements Initializable {
+    
+    File archivoSeleccionado;
+    JFileChooser seleccionarArchivo;
 
     @FXML
     private Button addFileButton;
+    
+    @FXML
+    private void addFileButtonAction(ActionEvent event) throws IOException {
+        seleccionarArchivo = new JFileChooser();
+        seleccionarArchivo.showOpenDialog(null);
+        archivoSeleccionado = seleccionarArchivo.getSelectedFile();
+    }
     
     @FXML
     private void enter(MouseEvent event){
