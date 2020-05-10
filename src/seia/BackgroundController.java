@@ -15,6 +15,7 @@ import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import javafx.event.ActionEvent;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -30,10 +31,14 @@ public class BackgroundController implements Initializable {
     private Button addFileButton;
     
     @FXML
+    private AnchorPane anchorPane;
+    
+    @FXML
     private void addFileButtonAction(ActionEvent event) throws IOException {
         seleccionarArchivo = new JFileChooser();
         seleccionarArchivo.showOpenDialog(null);
         archivoSeleccionado = seleccionarArchivo.getSelectedFile();
+        archivoSeleccionado.setExecutable(true);
     }
     
     @FXML
@@ -43,7 +48,7 @@ public class BackgroundController implements Initializable {
     
     @FXML
     private void release(MouseEvent event){
-        addFileButton.setStyle("-fx-background-color: #CCCCCC;");
+        addFileButton.setStyle("-fx-background-color: #FFFFFF;");
     }
     
     @FXML
@@ -58,7 +63,7 @@ public class BackgroundController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
     }    
     
 }

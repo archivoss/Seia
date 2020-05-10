@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #252525;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seia.BackgroundController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color: #252525;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seia.BackgroundController">
    <children>
-      <Button fx:id="addFileButton" layoutX="300.0" layoutY="40.0" mnemonicParsing="false" onAction="#addFileButtonAction" onMouseEntered="#enter" onMouseExited="#exit" onMousePressed="#press" onMouseReleased="#release" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" text="            ELEGIR ARCHIVO" textAlignment="CENTER">
+      <Button fx:id="addFileButton" layoutX="500.0" layoutY="40.0" mnemonicParsing="false" onAction="#addFileButtonAction" onMouseEntered="#enter" onMouseExited="#exit" onMousePressed="#press" onMouseReleased="#release" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" text="ELEGIR ARCHIVO" textAlignment="RIGHT">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="27.0" translateX="-15.0">
+               <image>
+                  <Image url="@../Resources/addFileIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <ImageView fitHeight="36.0" fitWidth="27.0" layoutX="320.0" layoutY="52.0">
-         <image>
-            <Image url="@../Resources/addFileIcon.png" />
-         </image>
-      </ImageView>
+      <Pane fx:id="panel" layoutX="50.0" layoutY="125.0" prefHeight="750.0" prefWidth="1100.0" />
    </children>
 </AnchorPane>
