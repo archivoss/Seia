@@ -7,7 +7,19 @@ package seia;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+<<<<<<< HEAD
 import javafx.fxml.Initializable;
+=======
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
+import javax.swing.*;
+import java.io.File;
+import java.io.IOException;
+import javafx.event.ActionEvent;
+import javafx.scene.layout.AnchorPane;
+>>>>>>> Gamaliel_T
 
 /**
  * FXML Controller class
@@ -15,6 +27,7 @@ import javafx.fxml.Initializable;
  * @author Gama
  */
 public class BackgroundController implements Initializable {
+<<<<<<< HEAD
 
     /**
      * Initializes the controller class.
@@ -22,6 +35,49 @@ public class BackgroundController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+=======
+    
+    File archivoSeleccionado;
+    JFileChooser seleccionarArchivo;
+
+    @FXML
+    private Button addFileButton;
+    
+    @FXML
+    private AnchorPane anchorPane;
+    
+    @FXML
+    private void addFileButtonAction(ActionEvent event) throws IOException {
+        seleccionarArchivo = new JFileChooser();
+        seleccionarArchivo.showOpenDialog(null);
+        archivoSeleccionado = seleccionarArchivo.getSelectedFile();
+        archivoSeleccionado.setExecutable(true);
+    }
+    
+    @FXML
+    private void enter(MouseEvent event){
+        addFileButton.setStyle("-fx-background-color: #CCCCCC;");
+    }
+    
+    @FXML
+    private void release(MouseEvent event){
+        addFileButton.setStyle("-fx-background-color: #FFFFFF;");
+    }
+    
+    @FXML
+    private void exit(MouseEvent event){
+        addFileButton.setStyle("-fx-background-color: #FFFFFF;");
+    }
+    
+    @FXML
+    private void press(MouseEvent event){
+        addFileButton.setStyle("-fx-background-color: #BBBBBB;");
+    }
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
+>>>>>>> Gamaliel_T
     }    
     
 }
