@@ -14,6 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -37,8 +38,7 @@ public class BackgroundController implements Initializable {
     private void addFileButtonAction(ActionEvent event) throws IOException {
         seleccionarArchivo = new JFileChooser();
         seleccionarArchivo.showOpenDialog(null);
-        archivoSeleccionado = seleccionarArchivo.getSelectedFile();
-        archivoSeleccionado.setExecutable(true);
+        archivoSeleccionado = seleccionarArchivo.getSelectedFile();    
     }
     
     @FXML
