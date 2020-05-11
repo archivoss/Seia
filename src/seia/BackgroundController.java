@@ -19,6 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Base64;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -38,14 +39,17 @@ public class BackgroundController implements Initializable {
     private AnchorPane anchorPane;
     
     @FXML
+    private Label contenidoPDF;
+    
+    @FXML
     private void addFileButtonAction(ActionEvent event) throws IOException {
         seleccionarArchivo = new JFileChooser();
         seleccionarArchivo.showOpenDialog(null);
         archivoSeleccionado = seleccionarArchivo.getSelectedFile(); 
         LeerPdf pdfTextParserObj = new LeerPdf();
-        //String pdfToText = pdfTextParserObj.pdftoText(args[0]);
         String pdfToText = pdfTextParserObj.pdftoText(archivoSeleccionado);
         System.out.println(pdfToText);
+        contenidoPDF.setText(pdfToText);
     }
     
     @FXML
