@@ -21,6 +21,7 @@ import java.util.Base64;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 
 /**
  * FXML Controller class
@@ -28,7 +29,7 @@ import javafx.scene.layout.AnchorPane;
  * @author Gama
  */
 public class BackgroundController implements Initializable {
-    
+    Rectangle rec;
     File archivoSeleccionado;
     JFileChooser seleccionarArchivo;
 
@@ -42,14 +43,34 @@ public class BackgroundController implements Initializable {
     private Label contenidoPDF;
     
     @FXML
+    private Button drawButton;
+    
+    @FXML
     private void addFileButtonAction(ActionEvent event) throws IOException {
         seleccionarArchivo = new JFileChooser();
         seleccionarArchivo.showOpenDialog(null);
         archivoSeleccionado = seleccionarArchivo.getSelectedFile(); 
         LeerPdf pdfTextParserObj = new LeerPdf();
         String pdfToText = pdfTextParserObj.pdftoText(archivoSeleccionado);
-        System.out.println(pdfToText);
         contenidoPDF.setText(pdfToText);
+    }
+    
+    @FXML
+    private void drawButtonAction(ActionEvent event) {
+    }
+    
+    @FXML
+    private void drawPressed(MouseEvent event) {
+        rec = new Rectangle();
+        rec.setX(event.getX());
+        rec.setY(event.getY());
+    }
+    
+    @FXML
+    private void drawDragged(MouseEvent event) { 
+        rec.setWidth(event.getX());
+        rec.setHeight(event.getY());
+        anchorPane.getChildren().addAll(rec);
     }
     
     @FXML

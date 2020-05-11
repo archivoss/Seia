@@ -25,7 +25,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Label fx:id="contenidoPDF" alignment="TOP_LEFT" layoutX="50.0" layoutY="120.0" prefHeight="750.0" prefWidth="1100.0" style="-fx-text-fill: #FFFFFF; -fx-background-color: #252525;">
+      <Label fx:id="contenidoPDF" alignment="TOP_LEFT" layoutX="66.0" layoutY="114.0" onMouseDragged="#drawDragged" onMousePressed="#drawPressed" prefHeight="750.0" prefWidth="1100.0" style="-fx-text-fill: #FFFFFF; -fx-background-color: #252525;">
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
@@ -33,5 +33,6 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <Button fx:id="drawButton" layoutX="59.0" layoutY="44.0" mnemonicParsing="false" onAction="#drawButtonAction" prefHeight="45.0" prefWidth="90.0" text="Dibujar" />
    </children>
 </AnchorPane>
