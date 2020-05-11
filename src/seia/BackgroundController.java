@@ -5,6 +5,7 @@
  */
 package seia;
 
+import java.awt.BasicStroke;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -13,14 +14,11 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javax.swing.*;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Base64;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 /**
@@ -62,6 +60,9 @@ public class BackgroundController implements Initializable {
     @FXML
     private void drawPressed(MouseEvent event) {
         rec = new Rectangle();
+        rec.setFill(Color.TRANSPARENT);
+        rec.setStrokeWidth(2);
+        rec.setStroke(Color.BLACK);
         rec.setX(event.getX());
         rec.setY(event.getY());
     }
