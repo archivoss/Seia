@@ -27,15 +27,12 @@ import javafx.scene.layout.AnchorPane;
  * @author Gama
  */
 public class BackgroundController implements Initializable {
-<<<<<<< HEAD
+
 
     /**
      * Initializes the controller class.
      */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-=======
+
     
     File archivoSeleccionado;
     JFileChooser seleccionarArchivo;
@@ -77,7 +74,6 @@ public class BackgroundController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
->>>>>>> Gamaliel_T
     }    
     
 }

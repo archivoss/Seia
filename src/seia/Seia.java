@@ -5,12 +5,10 @@
  */
 package seia;
 
-<<<<<<< HEAD
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
-=======
->>>>>>> Gamaliel_T
+
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -33,11 +31,10 @@ public class Seia extends Application {
 
     
     public static void main(String[] args) {
-<<<<<<< HEAD
+
         subidArchivo file = new subidArchivo();
         file.btnAbrirarchivoActionPerformed();
-=======
->>>>>>> Gamaliel_T
+
         launch(args);
     }
     
