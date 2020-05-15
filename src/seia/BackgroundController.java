@@ -25,6 +25,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 import javafx.scene.paint.Color;
+import static javafx.scene.paint.Color.*;
 import javafx.scene.shape.Rectangle;
 
 
@@ -83,22 +84,28 @@ public class BackgroundController implements Initializable {
     
     @FXML
     private void enter(MouseEvent event){
-        addFileButton.setStyle("-fx-background-color: #CCCCCC;");
+        //addFileButton.setStyle("-fx-background-color: #CCCCCC;");
+        addFileButton.setTextFill(WHITE);
     }
     
     @FXML
     private void release(MouseEvent event){
-        addFileButton.setStyle("-fx-background-color: #FFFFFF;");
+        //addFileButton.setStyle("-fx-background-color: #FFFFFF;");
+        addFileButton.setStyle("-fx-background-color: #43B581;");
+        Color c = Color.rgb(54,57,63);
+        addFileButton.setTextFill(c);
     }
     
     @FXML
     private void exit(MouseEvent event){
-        addFileButton.setStyle("-fx-background-color: #FFFFFF;");
+        //addFileButton.setStyle("-fx-background-color: #FFFFFF;");
+        Color c = Color.rgb(54,57,63);
+        addFileButton.setTextFill(c);
     }
     
     @FXML
     private void press(MouseEvent event){
-        addFileButton.setStyle("-fx-background-color: #BBBBBB;");
+        addFileButton.setStyle("-fx-background-color: #B22222;");
     }
     
     @Override

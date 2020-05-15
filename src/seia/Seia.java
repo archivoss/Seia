@@ -32,8 +32,6 @@ public class Seia extends Application {
     
     public static void main(String[] args) {
 
-        subidArchivo file = new subidArchivo();
-        file.btnAbrirarchivoActionPerformed();
 
         launch(args);
     }
