@@ -5,11 +5,12 @@
  */
 package seia;
 
+import java.awt.BasicStroke;
 import java.net.URL;
 import java.util.ResourceBundle;
-<<<<<<< HEAD
+
 import javafx.fxml.Initializable;
-=======
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -18,25 +19,20 @@ import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
->>>>>>> Gamaliel_T
 
-/**
- * FXML Controller class
- *
- * @author Gama
- */
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
+
+
+
 public class BackgroundController implements Initializable {
-<<<<<<< HEAD
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-=======
-    
+    Rectangle rec;
+
+
     File archivoSeleccionado;
     JFileChooser seleccionarArchivo;
 
@@ -47,11 +43,40 @@ public class BackgroundController implements Initializable {
     private AnchorPane anchorPane;
     
     @FXML
+    private Label contenidoPDF;
+    
+    @FXML
+    private Button drawButton;
+    
+    @FXML
     private void addFileButtonAction(ActionEvent event) throws IOException {
         seleccionarArchivo = new JFileChooser();
         seleccionarArchivo.showOpenDialog(null);
-        archivoSeleccionado = seleccionarArchivo.getSelectedFile();
-        archivoSeleccionado.setExecutable(true);
+        archivoSeleccionado = seleccionarArchivo.getSelectedFile(); 
+        LeerPdf pdfTextParserObj = new LeerPdf();
+        String pdfToText = pdfTextParserObj.pdftoText(archivoSeleccionado);
+        contenidoPDF.setText(pdfToText);
+    }
+    
+    @FXML
+    private void drawButtonAction(ActionEvent event) {
+    }
+    
+    @FXML
+    private void drawPressed(MouseEvent event) {
+        rec = new Rectangle();
+        rec.setFill(Color.TRANSPARENT);
+        rec.setStrokeWidth(2);
+        rec.setStroke(Color.BLACK);
+        rec.setX(event.getX());
+        rec.setY(event.getY());
+    }
+    
+    @FXML
+    private void drawDragged(MouseEvent event) { 
+        rec.setWidth(event.getX());
+        rec.setHeight(event.getY());
+        anchorPane.getChildren().addAll(rec);
     }
     
     @FXML
@@ -77,7 +102,7 @@ public class BackgroundController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
->>>>>>> Gamaliel_T
+
     }    
     
 }
