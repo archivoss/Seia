@@ -8,6 +8,9 @@ package seia;
 import java.awt.BasicStroke;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.fxml.Initializable;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -18,16 +21,18 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-/**
- * FXML Controller class
- *
- * @author Gama
- */
+
+
+
 public class BackgroundController implements Initializable {
+
     Rectangle rec;
+
+
     File archivoSeleccionado;
     JFileChooser seleccionarArchivo;
 
@@ -96,6 +101,7 @@ public class BackgroundController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
 
     }    
     
