@@ -18,6 +18,7 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
@@ -33,6 +34,9 @@ public class BackgroundController implements Initializable {
 
     @FXML
     private Button addFileButton;
+    
+    @FXML
+    private Pane drawPane;
     
     @FXML
     private AnchorPane anchorPane;
@@ -69,9 +73,9 @@ public class BackgroundController implements Initializable {
     
     @FXML
     private void drawDragged(MouseEvent event) { 
-        rec.setWidth(event.getX());
-        rec.setHeight(event.getY());
-        anchorPane.getChildren().addAll(rec);
+        rec.setWidth(event.getX() - rec.getX());
+        rec.setHeight(event.getY() - rec.getY());
+        drawPane.getChildren().addAll(rec);
     }
     
     @FXML
