@@ -36,6 +36,5 @@
       </TextArea>
       <Pane fx:id="drawPane" layoutX="50.0" layoutY="115.0" onMouseDragged="#drawDragged" onMousePressed="#drawPressed" prefHeight="750.0" prefWidth="1100.0" style="-fx-background-color: transparent;" />
       <Button fx:id="drawButton" layoutX="59.0" layoutY="44.0" mnemonicParsing="false" onAction="#drawButtonAction" prefHeight="45.0" prefWidth="90.0" text="Dibujar" />
-      <Pane fx:id="drawPane" layoutX="50.0" layoutY="115.0" onMouseDragged="#drawDragged" onMousePressed="#drawPressed" prefHeight="750.0" prefWidth="1100.0" />
    </children>
 </AnchorPane>
