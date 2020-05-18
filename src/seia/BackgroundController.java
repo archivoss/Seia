@@ -15,8 +15,13 @@ import javafx.scene.input.MouseEvent;
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javafx.event.ActionEvent;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -42,7 +47,7 @@ public class BackgroundController implements Initializable {
     private AnchorPane anchorPane;
     
     @FXML
-    private Label contenidoPDF;
+    private TextArea contenidoPDF;
     
     @FXML
     private Button drawButton;
@@ -54,6 +59,13 @@ public class BackgroundController implements Initializable {
         archivoSeleccionado = seleccionarArchivo.getSelectedFile(); 
         LeerPdf pdfTextParserObj = new LeerPdf();
         String pdfToText = pdfTextParserObj.pdftoText(archivoSeleccionado);
+        String[] cualquierwea = pdfToText.split("\n");
+        char[] caracteres;
+        caracteres = cualquierwea[0].toCharArray();
+        System.out.println(caracteres.length);
+        for (int i = 0; i < caracteres.length; i++) {
+            System.out.print(caracteres[i]);
+        }
         contenidoPDF.setText(pdfToText);
     }
     
@@ -69,13 +81,14 @@ public class BackgroundController implements Initializable {
         rec.setStroke(Color.BLACK);
         rec.setX(event.getX());
         rec.setY(event.getY());
+        drawPane.getChildren().add(rec);
     }
     
     @FXML
     private void drawDragged(MouseEvent event) { 
         rec.setWidth(event.getX() - rec.getX());
-        rec.setHeight(event.getY() - rec.getY());
-        drawPane.getChildren().addAll(rec);
+        rec.setHeight(event.getY() - rec.getY());    
+        contenidoPDF.selectRange((int) (Math.round((rec.getX()) - 15)/ 14.3), (int) (Math.round((event.getX()) - 15)/ 14.3));
     }
     
     @FXML
