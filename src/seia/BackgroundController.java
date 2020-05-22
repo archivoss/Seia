@@ -19,12 +19,14 @@ import java.util.ArrayList;
 import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 
 /**
@@ -36,12 +38,17 @@ public class BackgroundController implements Initializable {
     Rectangle rec;
     File archivoSeleccionado;
     JFileChooser seleccionarArchivo;
+    GraphicsContext gc;
+    double x;
+    double y;
+    double currentX;
+    double currentY;
 
     @FXML
     private Button addFileButton;
     
     @FXML
-    private Pane drawPane;
+    private Canvas drawPane;
     
     @FXML
     private AnchorPane anchorPane;
@@ -75,20 +82,38 @@ public class BackgroundController implements Initializable {
     
     @FXML
     private void drawPressed(MouseEvent event) {
-        rec = new Rectangle();
-        rec.setFill(Color.TRANSPARENT);
-        rec.setStrokeWidth(2);
-        rec.setStroke(Color.BLACK);
-        rec.setX(event.getX());
-        rec.setY(event.getY());
-        drawPane.getChildren().add(rec);
+        gc = drawPane.getGraphicsContext2D();
+        gc.setStroke(Color.BLACK);
+        gc.setLineWidth(2);
+        x = event.getX();
+        y = event.getY();  
     }
     
     @FXML
-    private void drawDragged(MouseEvent event) { 
-        rec.setWidth(event.getX() - rec.getX());
-        rec.setHeight(event.getY() - rec.getY());    
-        contenidoPDF.selectRange((int) (Math.round((rec.getX()) - 15)/ 14.3), (int) (Math.round((event.getX()) - 15)/ 14.3));
+    private void drawDragged(MouseEvent event) {  
+        // Abajo derecha
+        if (event.getX() > x && event.getY() > y) {
+            gc.clearRect(0, 0, 1100, 750);
+            gc.strokeRect(x, y, event.getX() - x, event.getY() - y);
+        }   
+        
+        // Abajo izquierda
+        if (event.getX() <  x && event.getY() > y) {
+            gc.clearRect(0, 0, 1100, 750);
+            gc.strokeRect(x - (x - event.getX()), y, x - event.getX(), event.getY() - y);
+        }
+        
+        //Arriba izquierda
+        if (event.getX() <  x && event.getY() < y) {
+            gc.clearRect(0, 0, 1100, 750);
+            gc.strokeRect(event.getX(), event.getY(), x - event.getX(), y - event.getY());
+        }
+        
+        //Arriba derecha
+        if (event.getX() > x && event.getY() < y) {
+            gc.clearRect(0, 0, 1100, 750);
+            gc.strokeRect(x, y - (y - event.getY()), event.getX() - x, y - event.getY());
+        }         
     }
     
     @FXML
