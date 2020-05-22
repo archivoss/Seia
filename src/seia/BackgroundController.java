@@ -31,6 +31,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import static javafx.scene.paint.Color.WHITE;
 import javafx.scene.paint.Paint;
 
 import javafx.scene.shape.Rectangle;
