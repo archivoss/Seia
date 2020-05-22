@@ -3,36 +3,34 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package seia;
-
-import java.awt.Desktop;
-import java.io.File;
-import java.io.IOException;
+package mockup1;
 
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 /**
  *
- * @author Gama
+ * @author pancho
  */
-public class Seia extends Application {
+public class Mockup1 extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Background.fxml"));       
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLPDF.fxml"));
+        
         Scene scene = new Scene(root);
+        
         stage.setScene(scene);
         stage.show();
     }
 
-    
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-
-
         launch(args);
     }
     

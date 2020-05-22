@@ -1,13 +1,18 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package seia;
 
 import java.awt.BasicStroke;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.fxml.Initializable;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -30,11 +35,9 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.TextAlignment;
 
-/**
- * FXML Controller class
- *
- * @author Gama
- */
+
+
+
 public class BackgroundController implements Initializable {
     File archivoSeleccionado;
     JFileChooser seleccionarArchivo;
@@ -119,26 +122,33 @@ public class BackgroundController implements Initializable {
     
     @FXML
     private void enter(MouseEvent event){
-        addFileButton.setStyle("-fx-background-color: #CCCCCC;");
+        //addFileButton.setStyle("-fx-background-color: #CCCCCC;");
+        addFileButton.setTextFill(WHITE);
     }
     
     @FXML
     private void release(MouseEvent event){
-        addFileButton.setStyle("-fx-background-color: #FFFFFF;");
+        //addFileButton.setStyle("-fx-background-color: #FFFFFF;");
+        addFileButton.setStyle("-fx-background-color: #43B581;");
+        Color c = Color.rgb(54,57,63);
+        addFileButton.setTextFill(c);
     }
     
     @FXML
     private void exit(MouseEvent event){
-        addFileButton.setStyle("-fx-background-color: #FFFFFF;");
+        //addFileButton.setStyle("-fx-background-color: #FFFFFF;");
+        Color c = Color.rgb(54,57,63);
+        addFileButton.setTextFill(c);
     }
     
     @FXML
     private void press(MouseEvent event){
-        addFileButton.setStyle("-fx-background-color: #BBBBBB;");
+        addFileButton.setStyle("-fx-background-color: #B22222;");
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
 
     }    
     

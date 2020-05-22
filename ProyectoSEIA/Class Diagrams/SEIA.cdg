@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="SEIA">
+  <ClassDiagramComponents>
+    <Class name="Escritura" package="" visibility="public" xPosition="665.0" yPosition="212.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="subidArchivo" package="" visibility="public" xPosition="562.0" yPosition="126.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Region" package="" visibility="public" xPosition="479.0" yPosition="287.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Cliente" package="" visibility="public" xPosition="278.0" yPosition="229.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Plantilla" package="" visibility="public" xPosition="676.0" yPosition="318.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="OrdenCompra" package="" visibility="public" xPosition="165.0" yPosition="126.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Seia" package="" visibility="public" xPosition="562.0" yPosition="39.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Informacion" package="" visibility="public" xPosition="67.0" yPosition="229.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Lectura" package="" visibility="public" xPosition="479.0" yPosition="212.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="tiene" source="OrdenCompra" target="Cliente" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="compuesto" source="subidArchivo" target="Lectura" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <UseRelation name="Lee" source="subidArchivo" target="OrdenCompra" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="genera" source="Escritura" target="Plantilla" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="OrdenCompra" target="Informacion" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="compuesto" source="Seia" target="subidArchivo" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="copmuesto" source="subidArchivo" target="Escritura" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="genera" source="Lectura" target="Region" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
