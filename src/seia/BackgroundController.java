@@ -28,6 +28,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.TextAlignment;
 
 /**
  * FXML Controller class
@@ -35,9 +36,9 @@ import javafx.scene.shape.Rectangle;
  * @author Gama
  */
 public class BackgroundController implements Initializable {
-    Rectangle rec;
     File archivoSeleccionado;
     JFileChooser seleccionarArchivo;
+    String pdfToText;
     GraphicsContext gc;
     double x;
     double y;
@@ -65,7 +66,7 @@ public class BackgroundController implements Initializable {
         seleccionarArchivo.showOpenDialog(null);
         archivoSeleccionado = seleccionarArchivo.getSelectedFile(); 
         LeerPdf pdfTextParserObj = new LeerPdf();
-        String pdfToText = pdfTextParserObj.pdftoText(archivoSeleccionado);
+        pdfToText = pdfTextParserObj.pdftoText(archivoSeleccionado);
         String[] cualquierwea = pdfToText.split("\n");
         char[] caracteres;
         caracteres = cualquierwea[0].toCharArray();
@@ -73,7 +74,8 @@ public class BackgroundController implements Initializable {
         for (int i = 0; i < caracteres.length; i++) {
             System.out.print(caracteres[i]);
         }
-        contenidoPDF.setText(pdfToText);
+        gc.strokeText(pdfToText, 20, 20);
+        //contenidoPDF.setText(pdfToText);
     }
     
     @FXML
@@ -91,27 +93,26 @@ public class BackgroundController implements Initializable {
     
     @FXML
     private void drawDragged(MouseEvent event) {  
-        // Abajo derecha
-        if (event.getX() > x && event.getY() > y) {
-            gc.clearRect(0, 0, 1100, 750);
+        gc.clearRect(0, 0, 1100, 750);
+        gc.strokeText(pdfToText, 20, 20);
+        // right-Bottom
+        if (event.getX() > x && event.getY() > y) {         
             gc.strokeRect(x, y, event.getX() - x, event.getY() - y);
         }   
         
-        // Abajo izquierda
+        // left-Bottom
         if (event.getX() <  x && event.getY() > y) {
-            gc.clearRect(0, 0, 1100, 750);
             gc.strokeRect(x - (x - event.getX()), y, x - event.getX(), event.getY() - y);
         }
-        
-        //Arriba izquierda
+
+        // left-top
         if (event.getX() <  x && event.getY() < y) {
-            gc.clearRect(0, 0, 1100, 750);
             gc.strokeRect(event.getX(), event.getY(), x - event.getX(), y - event.getY());
         }
         
-        //Arriba derecha
+        // right-top
         if (event.getX() > x && event.getY() < y) {
-            gc.clearRect(0, 0, 1100, 750);
+
             gc.strokeRect(x, y - (y - event.getY()), event.getX() - x, y - event.getY());
         }         
     }
